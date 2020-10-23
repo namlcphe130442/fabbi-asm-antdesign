@@ -35,11 +35,13 @@ const OrderItem = ({ dishOrder, dish, orderItems, setOrderItems } : Props) => {
     }else{
       message.error("You can't select the same dish twice, rather add more servings.");
       const nameDish = dish.name === '' ? '' : dish.name;
-      const map1 = orderItems.map((item: Order) => item);
-      map1.splice(1,1);
+      const newOrderItems = orderItems.map((item: Order) => item);
+      newOrderItems.splice(newOrderItems.length - 1, 1);
       const dishNew: Order = { id: generateId() , name: nameDish, numOfDish: dish.numOfDish };
-      map1.push(dishNew);
-      setOrderItems(map1);
+      newOrderItems.push(dishNew);
+      console.log(newOrderItems);
+      console.log(orderItems);
+      setOrderItems(newOrderItems);
     }
   }
 
