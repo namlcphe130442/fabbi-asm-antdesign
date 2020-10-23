@@ -39,8 +39,6 @@ const OrderItem = ({ dishOrder, dish, orderItems, setOrderItems } : Props) => {
       newOrderItems.splice(newOrderItems.length - 1, 1);
       const dishNew: Order = { id: generateId() , name: nameDish, numOfDish: dish.numOfDish };
       newOrderItems.push(dishNew);
-      console.log(newOrderItems);
-      console.log(orderItems);
       setOrderItems(newOrderItems);
     }
   }
