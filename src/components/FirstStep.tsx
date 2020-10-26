@@ -72,16 +72,18 @@ const FirstStep = ({ current, steps, setCurrent} : Props) => {
                 },
                 ({ getFieldValue }) => ({
                   validator(rule, value) {
-                    if ((value <= 10 && value >= 1)) {
+                    if ((value <= 10 && value >= 1 && Number.isInteger(value))) {
                       return Promise.resolve();
                     }
-                    return Promise.reject('Input the number of people (maximum 10)');
+                    return Promise.reject('Input the integer number of people (maximum 10)');
                   },
                 }),
               ]}
             >
               <InputNumber
                 type="number"
+                max={10}
+                min={1}
               />
             </Form.Item>
             <Form.Item {...data.tailFormItemLayout}  className="steps-action">

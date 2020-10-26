@@ -81,10 +81,10 @@ const OrderItem = ({ dishOrder, dish, orderItems, setOrderItems } : Props) => {
             },
             ({ getFieldValue }) => ({
               validator(rule, value) {
-                if ((value <= 10 && value >= 1)) {
+                if ((value <= 10 && value >= 1 && Number.isInteger(value))) {
                   return Promise.resolve();
                 }
-                return Promise.reject('Input the number of people (maximum 10)');
+                return Promise.reject('Input the integer number of people (maximum 10)');
               },
             }),
           ]}
