@@ -82,8 +82,6 @@ const FirstStep = ({ current, steps, setCurrent} : Props) => {
             >
               <InputNumber
                 type="number"
-                max={10}
-                min={1}
               />
             </Form.Item>
             <Form.Item {...data.tailFormItemLayout}  className="steps-action">
